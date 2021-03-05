@@ -1,0 +1,13 @@
+[package]
+name = "rust_api"
+version = "0.1.0"
+authors = ["John Scarrott <johns@razorsecure.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pact_consumer = "0.7.4"
+reqwest = {version = "0.11.1", features = ["blocking"]}
+rocket = "0.4.7"
+serde_json = "1.0.64"
