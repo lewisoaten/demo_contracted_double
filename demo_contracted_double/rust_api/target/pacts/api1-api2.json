@@ -1,0 +1,47 @@
+{
+  "consumer": {
+    "name": "api1"
+  },
+  "interactions": [
+    {
+      "description": "a request to sum 10 and 20",
+      "request": {
+        "method": "GET",
+        "path": "/sum/10/and/20"
+      },
+      "response": {
+        "body": {
+          "first": 10,
+          "result": 30,
+          "second": 20,
+          "time": "2021-02-06T10:11:27.919516"
+        },
+        "matchingRules": {
+          "body": {
+            "$.time": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "\\d+-\\d+-\\d+T\\d+:\\d+:\\d+\\.\\d+"
+                }
+              ]
+            }
+          }
+        },
+        "status": 201
+      }
+    }
+  ],
+  "metadata": {
+    "pactRust": {
+      "version": "0.8.12"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "api2"
+  }
+}
